@@ -1,0 +1,28 @@
+[Unit]
+Description=Claudio SSH Tunnel Manager with Telegram Bot
+After=network.target ssh.service
+Wants=network.target
+Requires=ssh.service
+
+[Service]
+Type=simple
+User=ineira
+Group=ineira
+WorkingDirectory=/home/ineira/codigo/claudio
+ExecStart=/home/ineira/codigo/claudio/claudio
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+# Variables de entorno - configurar según sea necesario
+Environment=TELEGRAM_BOT_TOKEN=""
+Environment=TELEGRAM_CHAT_ID=""
+Environment=SSH_PORT=22
+Environment=TUNNEL_SERVICE=ngrok
+
+# Cargar variables desde archivo .env si existe
+EnvironmentFile=-/home/ineira/codigo/claudio/.env
+
+[Install]
+WantedBy=multi-user.target

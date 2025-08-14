@@ -1,0 +1,38 @@
+# Binarios
+claudio
+claudio.exe
+
+# Archivos de configuración sensibles
+.env
+*.env
+
+# Logs
+*.log
+*.out
+claudio.out
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Directorio de contexto de Claude
+.context/
+
+# Archivo de instrucciones de Claude en raíz
+CLAUDE.md
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependencias de Node.js (si se usa)
+node_modules/
+
+# Archivos de ngrok
+ngrok.yml
